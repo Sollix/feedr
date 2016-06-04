@@ -25,17 +25,20 @@ $.ajax({
     success: function(response) {
     var templateSource = $('#digg-article').html();
 		var compiledTemplate = Handlebars.compile(templateSource);
-		var data = []
+		var article = []
 		
 		for (var i = 0; i < response.data.feed.length; i = i + 1) {
-			data.push({
+			alert("this is an item");
+			console.log(response.data.feed[i].digg_score);
+			article.push({
 				// Thumb: data.content.media.images[0].url,
 				Score: response.data.feed[i].digg_score
 			})
 		}
-		var generatedHtml = compiledTemplate(data);
+		var generatedHtml = compiledTemplate(article);
 		$('#main').append(generatedHtml);
 		console.log(response)
+		console.log(response.data.feed.length)
 	},
     error: function() {
         alert('Your request failed! Why!!?!?!?!')
