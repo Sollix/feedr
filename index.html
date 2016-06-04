@@ -105,8 +105,8 @@
         </section>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
         <script src="js/app.js"></script>
         <script id="digg-article" type="text/x-handlebars-template">
          <article class="article">
@@ -114,8 +114,8 @@
               <img src="" alt="" />
             </section>
             <section class="articleContent">
-                <a href="#"><h3>Test</h3></a>
-                <h6>Test</h6>
+                <a href="#"><h3>{{Title}}</h3></a>
+                <h6>{{Tag1}}, {{Tag2}}, {{Tag3}}</h6>
             </section>
             <section class="impressions">
               {{Score}}

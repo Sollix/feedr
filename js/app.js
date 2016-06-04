@@ -28,11 +28,13 @@ $.ajax({
 		var article = []
 		
 		for (var i = 0; i < response.data.feed.length; i = i + 1) {
-			alert("this is an item");
 			console.log(response.data.feed[i].digg_score);
 			article.push({
-				// Thumb: data.content.media.images[0].url,
-				Score: response.data.feed[i].digg_score
+				Title: response.data.feed[i].content.description,
+				Score: response.data.feed[i].digg_score,
+				Tag1: response.data.feed[i].content.tags[0],
+				Tag2: response.data.feed[i].content.tags[1],
+				Tag3: response.data.feed[i].content.tags[2]
 			})
 		}
 		var generatedHtml = compiledTemplate(article);
